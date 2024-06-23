@@ -1,0 +1,81 @@
+version: '3.1'
+
+services:
+
+  app-products:
+    image: maven:3.8.5-openjdk-17-slim
+    container_name: app-products
+    working_dir: /app
+    ports:
+      - 8080:8080
+      - 5005:5005
+    environment:
+      - PORT=8080
+      - DB_HOST=db-products
+      - DB_PORT=5432
+      - DB_NAME=products
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - REDIS_HOST=db-redis
+      - REDIS_PORT=6379
+    volumes:
+      - ./app-products/:/app
+      - ~/.m2/repository:/root/.m2/repository
+    networks: 
+      - net-rpe 
+    depends_on:
+      - db-products
+      - db-redis
+    command: ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+
+  db-products: 
+    container_name: db-products
+    image: postgres:16.0
+    restart: always
+    ports:
+      - "5432:5432"
+    networks: 
+      - net-rpe  
+    environment:
+      POSTGRES_DB: products
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  # db-card: 
+  #   container_name: db-card
+  #   image: postgres:16.0
+  #   restart: always
+  #   ports:
+  #     - "5433:5432"
+  #   networks: 
+  #     - net-rpe  
+  #   environment:
+  #     POSTGRES_DB: db-card
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+
+  # db-customer: 
+  #   container_name: db-customer
+  #   image: postgres:16.0
+  #   restart: always
+  #   ports:
+  #     - "5434:5432"
+  #   networks: 
+  #     - net-rpe  
+  #   environment:
+  #     POSTGRES_DB: db-customer
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+
+  db-redis:
+    container_name: db-redis
+    image: redis:7.2-alpine
+    restart: always
+    ports:
+     - "6379:6379"
+    networks:
+     - net-rpe
+  
+networks:
+  net-rpe:
+    driver: bridge
