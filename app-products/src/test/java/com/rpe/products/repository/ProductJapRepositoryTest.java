@@ -56,7 +56,7 @@ class ProductJapRepositoryTest {
 
     @Test
     void findById_ReturnsEmpty_WhenNotFound() {
-        Long productId = 2l;
+        Long productId = 22l;
         Optional<Product> productOptional = productRepository.findById(productId);
 
         assertTrue(productOptional.isEmpty());

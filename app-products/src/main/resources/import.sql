@@ -1,0 +1,5 @@
+insert into public.product (description, status, created_at, updated_at) values ('description 1', 'ATIVO', '2024-06-23T18:56:34.325110759', '2024-06-23T18:56:34.325110759');
+insert into public.product (description, status, created_at, updated_at) values ('description 2', 'ATIVO', '2024-06-23T18:56:34.325110759', '2024-06-23T18:56:34.325110759');
+insert into public.product (description, status, created_at, updated_at) values ('description 3', 'ATIVO', '2024-06-23T18:56:34.325110759', '2024-06-23T18:56:34.325110759');
+insert into public.product (description, status, created_at, updated_at) values ('description 4', 'ATIVO', '2024-06-23T18:56:34.325110759', '2024-06-23T18:56:34.325110759');
+insert into public.product (description, status, created_at, updated_at) values ('description 5', 'ATIVO', '2024-06-23T18:56:34.325110759', '2024-06-23T18:56:34.325110759');
