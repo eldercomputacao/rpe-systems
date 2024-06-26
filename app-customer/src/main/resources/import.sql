@@ -1,0 +1,1 @@
+insert into public.customer (id, name, cpf, status, birth, created_at, updated_at) values (1, 'Joao Pereira', '111.111.111-11', 'ATIVO', '1995-06-23', '2024-06-23T18:56:34.325110759', '2024-06-23T18:56:34.325110759');
