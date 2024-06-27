@@ -101,7 +101,7 @@ Teste 02) cadastro de portador e cartão
   - A parte de cadastro do registro do portador é feito no aplicativo (app-customer)
   - A parte de envio da mensagem (registro de cartão) para o aplicativo (app-card) via fila SQA ainda não foi finalizada  
 
-### Roadmap
+### Requisitos futuros
 
-- Falta adicionar a comunicação entre os aplicativos (app-customer, app-card) por meio da fila SQS.
-- Falta adicionar securaça com token JWT no aplicativo (app-customer)
+- Adicionar a comunicação entre os aplicativos (app-customer, app-card) por meio da fila SQS.
+- Adicionar seguraça com token JWT no aplicativo (app-customer)
