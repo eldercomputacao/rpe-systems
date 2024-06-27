@@ -103,4 +103,5 @@ Teste 02) cadastro de portador e cartão
 
 ### Roadmap
 
-- Adicionar a comunicação entre os aplicativos (app-customer, app-card) por meio da fila SQS.
+- Falta adicionar a comunicação entre os aplicativos (app-customer, app-card) por meio da fila SQS.
+- Falta adicionar securaça com token JWT no aplicativo (app-customer)
